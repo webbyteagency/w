@@ -1,0 +1,44 @@
+:root
+{
+    --white: #ffffff;
+    --black: #0c0605;
+    --first-color: #7704FA;
+    --hover: #39259f;
+    --bgcolor: #0c0605;
+    --radius: 50px;
+    --transition: all 0.4s ease-in 0s;
+    --font: Montserrat;
+    --text: 16.5px;
+}
+
+/* All buttons of website */
+.button
+{
+    background-color: var(--first-color);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--black);
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: var(--text);
+    text-align: center;
+    transition: var(--transition);
+}
+.button:hover
+{
+    color: var(--white);
+    background-color: var(--hover);
+}
+.button-white
+{
+    background-color: var(--white);
+    border-radius: var(--radius);
+    border: 2px solid var(--first-color);
+    color: var(--hover);
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: var(--text);
+    padding: 0.8em 1em;
+    text-align: center;
+    transition: var(--transition);
+}
