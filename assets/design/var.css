@@ -1,0 +1,9 @@
+:root
+{
+    --font: Figtree;
+    --identity: #F2613F;
+    --identity-hover: #9B3922;
+    --identity-dark: #481E14;
+    --black: #0C0C0C;
+    --t: all 0.4s ease-in 0s;
+}
