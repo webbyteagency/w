@@ -120,3 +120,7 @@ nav #link a:hover
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
 }
+
+#promo {
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.867), rgba(255, 0, 0, 0.958), rgba(196, 36, 36, 0.934));
+}
