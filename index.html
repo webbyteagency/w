@@ -708,7 +708,20 @@
     close.addEventListener("click", function(){
       promo.style.display = "none";
     })
-  </script>
+
+    
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker enregistré :', registration);
+        })
+        .catch((error) => {
+          console.error('Erreur lors de l\'enregistrement du Service Worker :', error);
+        });
+    });
+  }
+</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="src/App.js"></script>
