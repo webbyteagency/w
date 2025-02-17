@@ -13,6 +13,20 @@
     content="agence web, web agency, digital, application mobile, recherche agences web moins chères, agence web camerounaise, webbyteagency, marketing 237, 237 digital, web marketing, creation site web, freelance, la meilleure agence web au cameroun, je veux un site web, creation application mobile, creation logo moins chère, logo gratuit, cameroon digital">
   <meta name="google-site-verification" content="-0fwAUkmm9hCmvOtf5dEekM7BPxBracV1p9OWkp_tGM" />
   <meta name="og:image" property="assets/img/logo.png">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/pwa.html">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="application-name" content="WebByte">
+  <meta name="apple-mobile-web-app-title" content="WebByte">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <script src="pwa.js" defer></script>
+  <link rel="manifest" href="assets/img/logo.png">
+ <link rel="manifest" href="manifest.json">
+
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -36,8 +50,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<<<<<<< HEAD
   <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
   <script type="text/javascript" src="https://fr.monetbil.com/widget/v2/monetbil.min.js"></script>
+=======
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+>>>>>>> 4abe5d07952d5b31192d72bfcde35f783dc85720
 
   <!-- Title of Document -->
   <title>WebByte Agency - Concepteur des solutions web: Site vitrine, App Web & Landing Page</title>
@@ -587,12 +605,17 @@
 
   <!-- Footer -->
   <div class="flex justify-center mt-20">
-    <footer class="bg-[#070707fb] w-[900px] sm:w-[1200px] rounded-[20px] p-10 mb-10">
+    <footer class="bg-[#070707fb] w-[900px] sm:w-[1200px] rounded-[20px] p-2 sm:p-10 mb-10">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
+<<<<<<< HEAD
                 <a href="index.html" class="flex items-center">
                     <img src="assets/img/mylogo.png" class="h-40 me-3" alt="WebByte Logo" />
+=======
+                <a href="#" class="flex items-center">
+                    <img src="assets/img/mylogo.png" class="h-32 me-3" alt="WebByte Logo" />
+>>>>>>> 4abe5d07952d5b31192d72bfcde35f783dc85720
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -700,7 +723,20 @@
     close.addEventListener("click", function(){
       promo.style.display = "none";
     })
-  </script>
+
+    
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker enregistré :', registration);
+        })
+        .catch((error) => {
+          console.error('Erreur lors de l\'enregistrement du Service Worker :', error);
+        });
+    });
+  }
+</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="src/App.js"></script>
