@@ -2,11 +2,11 @@
   "name": "WebByte",
   "short_name": "WebByte",
   "icons": [{
-    "src": "/images/icons/icon-128x128.png",
+    "src": "assets/img/logo.jpg",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/jpg"
     }, {
-      "src": "/images/icons/icon-144x144.png",
+      "src": "assets/img/logo.jpg",
       "sizes": "144x144",
       "type": "image/png"
     }, {
