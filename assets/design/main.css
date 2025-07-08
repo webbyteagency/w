@@ -1,0 +1,126 @@
+*
+{
+  font-family: var(--font);
+}
+*::selection
+{
+  background-color: var(--identity);
+  color: #000;
+}
+html,body
+{
+  font-family: var(--font);
+  background-color: #000;
+  scroll-behavior: smooth;
+}
+body::-moz-selection {
+  background-color: #fff;
+  color: var(--identity);
+}
+
+body::selection 
+{
+  background-color: #fff;
+  color: var(--identity);
+}
+body::-webkit-scrollbar 
+{
+  background-color: var(--color);
+  border-radius: 50px;
+  width: 2px;
+  padding: 3em;
+  z-index: 1;
+}
+body::-webkit-scrollbar-corner 
+{
+  background-color: #fff;
+  border-radius: 100vw;
+  width: 0.5px;
+  z-index: 1;
+}
+body::-webkit-scrollbar-button 
+{
+  display: none;
+  border-radius: 2px;
+  z-index: 1;
+}
+body::-webkit-scrollbar-thumb 
+{
+  background-color: var(--green) !important;
+  border-radius: 5px;
+  width: 0.3px;
+  padding: 5em;
+  border: 0.25em solid transparent;
+  z-index: 1;
+}
+body::-webkit-scrollbar-thumb 
+{
+  background-color: var(--identity) !important;
+  border-radius: 2px;
+  width: 0.2px;
+  padding: 5em;
+  border: 0.18em solid var(--white);
+  z-index: 999;
+}
+
+header
+{
+  
+  background-color: rgba(0, 0, 0, 0.865);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1e1e1e;
+  -webkit-backdrop-filter: blur(12px);
+}
+/* nav #calling
+{
+  animation: flip 1.5s linear infinite;
+}
+header #link a
+{
+  color: var(--white);
+  transition: var(--t);
+}
+nav #link a:hover
+{
+  color: var(--identity);
+} */
+
+/* Pricing */
+#p1, #p3{transition: var(--t);}
+#p1:hover,
+#p3:hover
+{
+  border: 1px solid var(--identity-hover);
+  opacity: 0.8;
+  transform: translateY(-5px);
+  transition: var(--t);
+}
+
+.load 
+{
+  background-color: #000;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s ease-in 0.9s;
+}
+.load .loader img 
+{
+  animation: zoomIn 1s;
+}
+
+#partners img
+{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+#promo {
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.867), rgba(255, 0, 0, 0.958), rgba(196, 36, 36, 0.934));
+}
