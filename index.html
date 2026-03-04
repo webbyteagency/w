@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="On ne fait pas que des sites. On construit des machines à cash numériques. Design authentiques, tech de pointe et techniques de conversion.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webbyteagency.github.io/w/">
+    <meta property="og:title" content="WebByte Agency — On développe des sites web qui convertissent.">
+    <meta property="og:description" content="Moins de blabla créatif. Plus d'impact digital.">
+    <meta property="og:image" content="https://webbyteagency.github.io/w/public/img/icon.jpg"> 
+    <meta name="twitter:card" content="https://webbyteagency.github.io/w/public/img/icon.jpg">
+    <meta name="twitter:url" content="https://webbyteagency.github.io/w/">
+    <meta name="twitter:title" content="WebByte Agency — On développe des sites web qui convertissent.">
+    <meta name="twitter:description" content="Moins de blabla créatif. Plus d'impact digital.">
+    <meta name="twitter:image" content="https://webbyteagency.github.io/w/public/img/icon.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="shortcut icon" href="public/img/icon.jpg" type="image/x-icon">
+
+    <title>WebByte Agency — On développe des sites web qui convertissent.</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        lime: '#bef264', // Vert Citron
+                    },
+                    fontFamily: {
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Inter:wght@400;900&display=swap');
+        
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* Effet Gooey pour la Nav */
+        .gooey-filter { filter: url('#goo'); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(190, 242, 100, 0.1); }
+
+        /* Grain texture pour le côté Underground */
+        .bg-grain { position: fixed; inset: 0; background-image: url("https://grainy-gradients.vercel.app/noise.svg"); opacity: 0.05; pointer-events: none; z-index: 50; }
+
+        /* Animation Marquee Footer */
+        .marquee-container { white-space: nowrap; overflow: hidden; display: flex; }
+        .marquee-text { font-size: 15vw; font-weight: 900; line-height: 1; text-transform: uppercase; color: transparent; -webkit-text-stroke: 1px rgba(190, 242, 100, 0.3); }
+        
+        /* Card Styles */
+        .card-inner { transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .project-card:hover .card-inner { transform: translateY(-10px) rotateX(5deg); }
+    </style>
+</head>
+<body>
+    <!-- Cursor -->
+    <div id="cursor" class="fixed top-0 left-0 w-3 h-3 bg-lime rounded-full pointer-events-none z-[9999] mix-blend-difference"></div>
+    <div id="cursor-follower" class="fixed top-0 left-0 w-8 h-8 border border-lime rounded-full pointer-events-none z-[9998] mix-blend-difference transition-transform duration-100 ease-out"></div>
+
+    <div class="bg-grain"></div>
+
+    <svg class="hidden"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" /><feBlend in="SourceGraphic" in2="goo" /></filter></defs></svg>
+
+    <div class="fixed top-0 left-0 w-full flex justify-center p-6 z-[100] gooey-filter">
+        <nav id="navbar" class="glass px-8 py-3 rounded-full flex items-center gap-10">
+            <span class="font-black text-lime tracking-tighter">
+                <img src="public/img/icon.jpg" alt="WB" height="50" width="50" class="rounded-full" />
+            </span>
+            <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.3em] font-bold">
+                <a href="#services" class="hover:text-lime transition">Services</a>
+                <a href="#projets" class="hover:text-lime transition">Projets</a>
+                <a href="#chariow" class="hover:text-lime transition">MarketPlace</a>
+                <a href="#about" class="hover:text-lime transition">L'agence</a>
+            </div>
+            <a href="https://wa.me/237620828497?text=Bonjour, je voudrais discuter par rapport à un projet que j'ai et que je voudrais concretiser." target="_blank" class="bg-lime text-black text-[10px] px-6 py-2 rounded-full font-black uppercase hover:scale-110 transition-transform">Contact</a>
+        </nav>
+    </div><br><br>
+
+    <section class="relative h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
+        <div class="absolute w-[500px] h-[500px] bg-lime/10 blur-[120px] rounded-full -top-20 -right-20 animate-pulse"></div>
+        
+        <div class="z-10 text-center">
+            <h1 class="hero-title text-4xl md:text-[7vw] font-[900] tracking-tighter leading-[0.85] uppercase italic opacity-0">
+                Ton site web, <br> <span class="text-lime">victoire sur tes concurrents.</span>
+            </h1>
+            <p class="hero-sub mt-8 text-sm md:text-lg text-white/40 font-mono uppercase tracking-widest opacity-0">
+                // Moins de blabla créatif. Plus d'impact digital.
+            </p>
+            <div class="mt-12 opacity-0 hero-cta">
+                <a href="#projets" class="group relative inline-flex items-center gap-4 text-lime font-bold uppercase tracking-tighter text-xl">
+                    Voir les drop's
+                    <span class="w-12 h-[2px] bg-lime group-hover:w-20 transition-all"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-6 md:px-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-lime font-mono text-xs uppercase tracking-[0.3em] mb-4 block">// Votre arsenal de croissance</span>
+                    <h2 class="text-4xl md:text-7xl font-[900] uppercase italic tracking-tighter leading-[0.85]">
+                        Transformez votre <br><span class="text-lime">Trafic en Profit.</span>
+                    </h2>
+                </div>
+                <p class="text-white/40 font-mono text-[10px] uppercase max-w-[250px] leading-relaxed border-l border-lime/30 pl-4">
+                    On ne livre pas de simples sites. On construit des actifs qui travaillent pour vous 24/7.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="group p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] hover:border-lime/30 transition-all duration-500 flex flex-col">
+                    <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-full bg-white/5 text-white/50 italic font-[900]">01</div>
+                    <h3 class="text-3xl font-[900] uppercase italic mb-4 tracking-tighter">Site <br>Vitrine</h3>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">
+                        Votre vitrine est votre <span class="text-white font-bold">première force de vente</span>. On élimine l'amateurisme pour imposer votre autorité.
+                    </p>
+                    <div class="space-y-5 border-t border-white/5 pt-8 mt-auto">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">Crédibilité Instantanée</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Convertissez la méfiance en confiance dès la première seconde de chargement.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">SEO Dominant</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Une structure propre pour que Google vous place devant ceux qui dépensent plus en pub.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group p-10 rounded-[2.5rem] border border-lime bg-lime/[0.03] lg:scale-105 shadow-[0_0_60px_rgba(190,242,100,0.1)] transition-all duration-500 relative overflow-hidden flex flex-col z-10">
+                    <div class="absolute top-5 right-5 font-mono text-[9px] bg-lime text-black px-3 py-1 rounded-full font-bold uppercase tracking-tighter">Impact Maximum</div>
+                    <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-full bg-lime text-black italic font-[900] shadow-[0_0_20px_rgba(190,242,100,0.4)]">02</div>
+                    <h3 class="text-3xl font-[900] uppercase italic mb-4 tracking-tighter">Application <br><span class="text-lime">Web</span> / <span class="text-lime">SaaS</span></h3>
+                    <p class="text-white/70 text-sm leading-relaxed mb-8">
+                        Éliminez les frictions. Nous codons des outils qui génèrent des revenus <span class="text-white">pendant que vous dormez</span>. Vous voulez lancer un blog? Un système de reservation? Nous sommes là pour vous.
+                    </p>
+                    <div class="space-y-5 border-t border-white/10 pt-8 mt-auto">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">Rentabilité</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">
+                                    Nous mettons en place des systèmes qui génèrent des revenus pour nos clients et qui facilitent le quotidien des utilisateurs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">Scaling Illimité</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Une infrastructure robuste prête à encaisser <span class="text-lime font-bold">+10k utilisateurs</span> sans broncher.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] hover:border-lime/30 transition-all duration-500 flex flex-col">
+                    <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-xl bg-white/5 text-white/50 italic font-[900]">03</div>
+                    <h3 class="text-3xl font-[900] uppercase italic mb-4 tracking-tighter">Landing <br>Page</h3>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">
+                        Chaque clic coûte de l'argent. On s'assure que <span class="text-white font-bold">chaque visiteur</span> devienne une opportunité de vente.
+                    </p>
+                    <div class="space-y-5 border-t border-white/5 pt-8 mt-auto">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">ROI Publicitaire</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Ne jetez plus votre budget Ads. On optimise le parcours pour un maximum de ventes.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 mt-1">
+                                <span class="text-lime text-xs italic font-black">→</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-1">Psychologie Cognitive</h4>
+                                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Copywriting et interface conçus pour éliminer les freins à l'achat instantanément.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="py-32 px-6 md:px-20 bg-dark relative rounded-t-[3rem] z-20">
+        <div class="flex justify-between items-end mb-20">
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter">Quelques <br> Drop's</h2>
+            <p class="text-white/30 font-mono text-xs max-w-[200px]">[001 - 004] Projets qui convertissent.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <a href="https://lidonadvertissement.com" target="_blank" class="project-card group relative">
+                <div class="card-inner relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/5 bg-white/5 p-2">
+                    <img src="public/img/img (1).png" class="w-full h-full object-contain rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="Project 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-lime font-mono text-xs">Voir le projet _</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-baseline px-2">
+                    <h3 class="text-2xl font-bold uppercase tracking-tighter group-hover:text-lime transition">LIDON ADVERTISSMENT</h3>
+                    <span class="font-mono text-[10px] text-white/30">2025 // Site vitrine</span>
+                </div>
+            </a>
+
+            <a href="https://allopro.cloud" target="_blank" class="project-card group relative mt-12 md:mt-24">
+                <div class="card-inner relative aspect-[16/10] rounded-3xl overflow-hidden border border-lime/20 bg-lime/5 p-2">
+                    <img src="public/img/img (2).png" class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="Project 2">
+                </div>
+                <div class="mt-6 flex justify-between items-baseline px-2">
+                    <h3 class="text-2xl font-bold uppercase tracking-tighter group-hover:text-lime transition">Allo PRO</h3>
+                    <span class="font-mono text-[10px] text-white/30">2025 // Landing Page</span>
+                </div>
+            </a>
+
+            <a href="https://agtravelsarl.com" target="_blank" class="project-card group relative">
+                <div class="card-inner relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/5 bg-white/5 p-2">
+                    <img src="public/img/img (3).png" class="w-full h-full object-contain rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="Project 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-lime font-mono text-xs">Voir le projet _</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-baseline px-2">
+                    <h3 class="text-2xl font-bold uppercase tracking-tighter group-hover:text-lime transition">AG Travel</h3>
+                    <span class="font-mono text-[10px] text-white/30">2025 // Site vitrine</span>
+                </div>
+            </a>
+
+            <a href="https://webbyteagency.github.io/pharmaflow" target="_blank" class="project-card group relative mt-12 md:mt-24">
+                <div class="card-inner relative aspect-[16/10] rounded-3xl overflow-hidden border border-lime/20 bg-lime/5 p-2">
+                    <img src="public/img/img (4).png" class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="Project 2">
+                </div>
+                <div class="mt-6 flex justify-between items-baseline px-2">
+                    <h3 class="text-2xl font-bold uppercase tracking-tighter group-hover:text-lime transition">PharmaFlow</h3>
+                    <span class="font-mono text-[10px] text-white/30">2025 // Landing Page</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="chariow" class="py-40 px-6 text-center">
+        <div class="max-w-4xl mx-auto border-y border-white/10 py-20 relative">
+            <span class="absolute top-0 left-1/2 -translate-x-1/2 bg-black px-4 -translate-y-1/2 font-mono text-[10px] text-lime">Notre MarketPlace</span>
+            <h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8">Découvrir nos produits digitaux.</h2>
+            <p class="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed italic font-light">
+                Votre business mérite mieux que des templates génériques. Téléchargez des actifs digitaux conçus pour le scaling agressif et la conversion pure. E-books de terrain, interfaces haute performance. Installez l'excellence, purgez la médiocrité.
+            </p>
+            <br><br>
+            <a href="https://webbyteagency.mychariow.shop/" target="_blank" class="bg-lime mt-10 text-black px-12 py-5 rounded-full font-black uppercase tracking-tighter text-sm hover:bg-black hover:text-white transition-all">
+                Visiter notre boutique
+            </a>
+        </div>
+    </section>
+
+    <section id="subscription" class="py-32 px-6 md:px-20 bg-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-lime/5 blur-[100px] rounded-full"></div>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">
+                        Pas de One-Shot.<br><span class="text-lime">Un Partenariat.</span>
+                    </h2>
+                    <p class="mt-4 text-white/40 font-mono text-sm uppercase tracking-widest">
+                        // Votre site web mérite une garde d'élite.
+                    </p>
+                </div>
+                <div class="glass p-6 rounded-2xl border-lime/20 max-w-sm">
+                    <p class="text-xs font-mono text-white/60 leading-relaxed">
+                        Le web évolue chaque seconde. Un site statique est un site mort. Nos abonnements garantissent une montée en puissance continue, une sécurité blindée et des mises à jour technologiques sans friction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="project-card group relative p-8 rounded-3xl border border-white/5 bg-white/5 flex flex-col h-full">
+                    <div class="mb-8">
+                        <span class="text-lime font-mono text-[10px] border border-lime/30 px-3 py-1 rounded-full uppercase">Classique</span>
+                        <h3 class="text-3xl font-black mt-4 uppercase italic">Maintenance</h3>
+                        <p class="text-white/40 text-sm mt-2">Sécurité & Stabilité</p>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow font-mono text-xs uppercase tracking-tight">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Mises à jour visuelles</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Backups quotidiens</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Monitoring Sécurité 24/7</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Hébergement Haute Performance</li>
+                        <li class="flex items-center gap-3 text-white/30"><span class="w-1.5 h-1.5 bg-white/20 rounded-full"></span> —</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black mb-6 italic tracking-tighter">Sur Devis</div>
+                        <a href="https://wa.me/237620828497?text=Bonjour, je voudrais souscrire à un abonnement classique pour mon projet de site web" class="block text-center bg-white/5 hover:bg-lime hover:text-black border border-white/10 py-4 rounded-full font-bold transition-all uppercase text-xs">Choisir ce plan</a>
+                    </div>
+                </div>
+
+                <div class="project-card group relative p-8 rounded-3xl border border-lime bg-lime/5 flex flex-col h-full scale-105 z-10 shadow-[0_0_50px_rgba(190,242,100,0.1)]">
+                    <div class="mb-8">
+                        <span class="bg-lime text-black font-mono text-[10px] px-3 py-1 rounded-full uppercase font-bold">Populaire</span>
+                        <h3 class="text-3xl font-black mt-4 uppercase italic">Growth Pack</h3>
+                        <p class="text-white/40 text-sm mt-2">Evolution & Performance</p>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow font-mono text-xs uppercase tracking-tight">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Tout du plan Classique</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Modifications de contenu</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Optimisation SEO continue</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Rapport mensuel de conversion</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black mb-6 italic tracking-tighter text-lime">Premium</div>
+                        <a href="https://wa.me/237620828497?text=Bonjour, je voudrais souscrire à un Growth Pack pour mon projet de site web" class="block text-center bg-lime text-black py-4 rounded-full font-bold hover:scale-105 transition-all uppercase text-xs">Démarrer le scaling</a>
+                    </div>
+                </div>
+
+                <div class="project-card group relative p-8 rounded-3xl border border-white/5 bg-white/5 flex flex-col h-full">
+                    <div class="mb-8">
+                        <span class="text-white/40 font-mono text-[10px] border border-white/20 px-3 py-1 rounded-full uppercase">Full Pack</span>
+                        <h3 class="text-3xl font-black mt-4 uppercase italic">End-to-End</h3>
+                        <p class="text-white/40 text-sm mt-2">Conception + Exécution</p>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow font-mono text-xs uppercase tracking-tight">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Création du site de A à Z</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Maintenance totale incluse</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Hébergement Haute Performance</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> Support prioritaire 1h</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black mb-6 italic tracking-tighter">Full Pack</div>
+                        <a href="https://wa.me/237620828497?text=Bonjour, je voudrais souscrire à un abonnement End-To-End pour mon projet de site web" class="block text-center bg-white/5 hover:bg-lime hover:text-black border border-white/10 py-4 rounded-full font-bold transition-all uppercase text-xs">Lancer mon projet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-40 pb-10 bg-black overflow-hidden">
+        <div class="marquee-container pb-20 border-b border-white/5">
+            <div class="marquee-text flex gap-20 items-center pr-20">
+                <span>WebByte Agency</span>
+                <span class="text-lime">WebByte Agency</span>
+                <span>WebByte Agency</span>
+                <span class="text-lime">WebByte Agency</span>
+            </div>
+        </div>
+        
+        <div class="mt-10 flex flex-col md:flex-row justify-between items-center px-10 gap-6 text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">
+            <div>© 2026 WebByte Agency</div>
+            <div class="flex gap-10">
+                <a href="https://www.linkedin.com/company/webbyte-agency/" target="_blank" class="hover:text-lime">LinkedIn</a>
+                <a href="#" target="_blank" class="hover:text-lime">X.com</a>
+                <a href="mailto:webbyteagency@gmail.com" target="_blank" class="hover:text-lime">Adresse email</a>
+            </div>
+            <div class="text-lime italic font-bold tracking-normal uppercase">Designed in 237.</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animation Entrée Hero
+        const tl = gsap.timeline();
+        tl.to(".hero-title", { opacity: 1, y: -30, duration: 1.5, ease: "power4.out", delay: 0.5 })
+          .to(".hero-sub", { opacity: 1, y: -20, duration: 1, ease: "power3.out" }, "-=1")
+          .to(".hero-cta", { opacity: 1, duration: 1 }, "-=0.5");
+
+        // Nav Goutte Animation
+        const nav = document.querySelector("#navbar");
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            const current = window.pageYOffset;
+            if (current > 150 && current > lastScroll) {
+                gsap.to(nav, { y: -150, scale: 0.9, opacity: 0, duration: 0.5, ease: "back.in(1)" });
+            } else {
+                gsap.to(nav, { y: 0, scale: 1, opacity: 1, duration: 0.8, ease: "elastic.out(1, 0.8)" });
+            }
+            lastScroll = current;
+        });
+
+        // Footer Marquee Infini
+        const marquee = document.querySelector(".marquee-text");
+        const clone = marquee.cloneNode(true);
+        marquee.parentNode.appendChild(clone);
+
+        gsap.to(".marquee-text", {
+            xPercent: -100,
+            repeat: -1,
+            duration: 15,
+            ease: "none"
+        });
+
+        // Reveal des projets au scroll
+        gsap.utils.toArray(".project-card").forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                },
+                opacity: 0,
+                y: 100,
+                rotate: 5,
+                duration: 1.5,
+                ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+*{
+    cursor: none;
+}
+*::selection {
+    background-color: #bef264;
+    color: #050505;
+}
+
+/* Masquer le curseur par défaut sur tout le site */
+html, body {
+    cursor: none;
+    scroll-behavior: smooth;
+}
+
+/* S'assurer que les liens et boutons gardent l'interaction */
+a, button, .project-card {
+    cursor: none;
+}
+
+#cursor, #cursor-follower {
+    transform: translate(-50%, -50%); /* Centrage parfait sur la pointe de la souris */
+    will-change: transform;
+}
