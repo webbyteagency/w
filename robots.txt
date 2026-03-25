@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /w/
+Allow: /pharmaflow/
+Disallow: /README.md
+Disallow: /LICENSE
+
+# Indique à Google où se trouve ton plan de site (si tu en crées un plus tard)
+Sitemap: https://webbyteagency.github.io/sitemap.xml
